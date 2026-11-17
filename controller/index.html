@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>FootBot Controller</title>
+  <link rel="stylesheet" href="/src/ui/layout.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="brand">FootBot</div>
+      <div id="gauge-container" class="gauge-container"></div>
+    </header>
+
+    <div id="warning-container" class="warning-banner"></div>
+
+    <main class="controls-area">
+      <!-- Virtual Joystick -->
+      <div id="joystick-pad" class="joystick-container">
+        <div class="joystick-crosshair-x"></div>
+        <div class="joystick-crosshair-y"></div>
+        <div class="joystick-deadzone"></div>
+        <div id="joystick-knob" class="joystick-knob"></div>
+      </div>
+
+      <!-- Spin Buttons -->
+      <div class="spin-row">
+        <button id="btn-spin-left" class="btn-spin">↺ Spin Left</button>
+        <button id="btn-spin-right" class="btn-spin">↻ Spin Right</button>
+      </div>
+
+      <!-- Timed Turns -->
+      <div class="turn-grid">
+        <button id="btn-turn-left-90" class="btn-turn">-90°</button>
+        <button id="btn-turn-right-90" class="btn-turn">+90°</button>
+        <button id="btn-turn-left-180" class="btn-turn">-180°</button>
+        <button id="btn-turn-right-180" class="btn-turn">+180°</button>
+      </div>
+
+      <!-- Speed Limit Slider -->
+      <div class="slider-container">
+        <div class="slider-label-row">
+          <span>Max Speed (PWM)</span>
+          <span id="speed-value">200</span>
+        </div>
+        <input type="range" id="speed-slider" class="speed-slider" min="80" max="255" value="200" />
+      </div>
+
+      <!-- Emergency Stop -->
+      <button id="btn-stop" class="btn-stop">STOP</button>
+    </main>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

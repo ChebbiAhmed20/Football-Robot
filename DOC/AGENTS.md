@@ -186,6 +186,14 @@ Newest entries first. **One entry per change**, written when you make the change
 
 ### Entries
 
+### 2026-11-17 03:23 (Africa/Tunis): Completed Phase 5 (Web controller) & End-to-End integration
+- **Where:** `controller/` (`src/protocol/types.ts`, `constants.ts`, `src/net/` `socket.ts`, `sequencer.ts`, `state_sender.ts`, `event_sender.ts`, `ping.ts`, `clock.ts`, `src/input/` `joystick.ts`, `spin_buttons.ts`, `buttons.ts`, `src/ui/` `gauge.ts`, `warnings.ts`, `layout.css`, `src/state/store.ts`, `src/main.ts`, `index.html`, `vite.config.ts`), `controller/tests/` (`joystick.test.ts`, `state_sender.test.ts`, `event_sender.test.ts`, `gauge.test.ts`, `socket.test.ts`), `tools/mock-robot/tests/e2e.test.ts`.
+- **What:** Built zero-framework mobile web controller adhering to protocol v4 and architecture specifications. Built and verified with Vite + gzip into `firmware/data`. Added complete Vitest test suites (17 tests) and end-to-end integration test against mock robot (2 tests).
+- **Why:** Delivers client-side controller interface and verifies end-to-end communication against mock robot without hardware.
+- **Verified:** Controller tests: 17/17 passed in 1.64s. Mock robot tests: 15/15 passed in 2.36s. Built static assets with gzip: index.html (731 B gz), css (1.3 kB gz), js (4.1 kB gz).
+- **Docs updated:** `DOC/AGENTS.md`.
+- **Follow-ups:** Proceed to Phase 6 hardware-facing firmware code (`hal/`, `net/`, `main.cpp`).
+
 ### 2026-11-17 03:17 (Africa/Tunis): Completed Phase 4 (Mock robot server & test suite)
 - **Where:** `tools/mock-robot/` (`src/mixing.ts`, `src/robot_model.ts`, `src/server.ts`, `tests/protocol.test.ts`).
 - **What:** Built Node.js + TypeScript mock robot server implementing protocol v4 (mixing against shared vectors, timed turns, single client enforcement, 800 ms failsafe, status every 500 ms, event queue deduplication, busy/cancelled errors).
