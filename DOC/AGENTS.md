@@ -94,7 +94,8 @@ git log --oneline -15
 ## 3. Where things live
 
 ```
-PROTOCOL.md  ARCHITECTURE.md  AGENTS.md  README.md
+DOC/         PROTOCOL.md ARCHITECTURE.md AGENTS.md TESTING.md EXECUTION.md
+AGENTS.md    README.md
 docs/        wiring.md power.md calibration.md hardware-checklist.md
 shared/      test-vectors.json
 firmware/    platformio.ini  include/config.h  src/{core,protocol,hal,net}  test/  data/(generated)
@@ -128,12 +129,13 @@ Fill these in after the first successful build, and update on every change.
 
 | Item | Version |
 |---|---|
-| PlatformIO platform `espressif32` | _not pinned yet_ |
-| Arduino core | _not pinned yet_ |
-| ArduinoJson | _not pinned yet (^7)_ |
-| AsyncTCP / ESPAsyncWebServer (mathieucarbou) | _not pinned yet_ |
-| Node.js | _not pinned yet (LTS)_ |
-| Vite / TypeScript / Vitest | _not pinned yet_ |
+| PlatformIO platform `espressif32` | `^6.5.0` (Arduino core 2.0.x / `espressif32`) |
+| Arduino core | `2.0.14` |
+| ArduinoJson | `^7.0.0` (pinned in platformio.ini) |
+| AsyncTCP / ESPAsyncWebServer (mathieucarbou) | `mathieucarbou/AsyncTCP`, `mathieucarbou/ESPAsyncWebServer` |
+| Node.js | `v22.16.0` (LTS) |
+| Vite / TypeScript / Vitest | `vite 5.4.21`, `typescript 5.4.5`, `vitest 1.6.1` |
+| WebSocket library (`ws`) | `ws 8.18.3` |
 
 ---
 
@@ -185,6 +187,14 @@ Newest entries first. **One entry per change**, written when you make the change
 ```
 
 ### Entries
+
+### 2026-11-17 03:27 (Africa/Tunis): Created TESTING.md, EXECUTION.md, pinned versions and synced trees
+- **Where:** `DOC/TESTING.md`, `DOC/EXECUTION.md`, `DOC/ARCHITECTURE.md`, `DOC/AGENTS.md`.
+- **What:** Authored comprehensive testing guide and execution user manual. Updated directory trees in ARCHITECTURE.md and AGENTS.md to explicitly reflect `DOC/` and new docs. Pinned runtime, tool, and library versions in section 5.
+- **Why:** Satisfies deliverables 9 & 10 and enforces the documentation-sync golden rule.
+- **Verified:** Documentation cross-references verified; all paths and commands align with repo files.
+- **Docs updated:** `DOC/TESTING.md`, `DOC/EXECUTION.md`, `DOC/ARCHITECTURE.md`, `DOC/AGENTS.md`.
+- **Follow-ups:** Final review and git commit.
 
 ### 2026-11-17 03:25 (Africa/Tunis): Completed Phase 6 (Hardware-facing firmware code)
 - **Where:** `firmware/src/` (`hal/motors.h/.cpp`, `hal/status_led.h/.cpp`, `net/wifi_ap.h/.cpp`, `net/web.h/.cpp`, `net/ws_link.h/.cpp`, `main.cpp`).

@@ -28,13 +28,18 @@ Rule from the protocol: change `PROTOCOL.md` first, then firmware, mock and cont
 
 ```
 footbot/
-├── PROTOCOL.md                  # the contract (v4)
-├── ARCHITECTURE.md              # this file
+├── DOC/
+│   ├── PROTOCOL.md              # the contract (v4)
+│   ├── ARCHITECTURE.md          # this file
+│   ├── AGENTS.md                # working guide and project log
+│   ├── TESTING.md               # test reports and verification checklists
+│   └── EXECUTION.md             # end-to-end user manual
 ├── README.md                    # quick start, wiring summary, how to flash
+├── AGENTS.md                    # root pointer to DOC/AGENTS.md
 ├── .gitignore
 ├── .editorconfig
 │
-├── docs/
+├── docs/                        # hardware documentation
 │   ├── wiring.md                # pin table, power diagram, photos
 │   ├── power.md                 # battery, charger, buck setup, safety notes
 │   ├── calibration.md           # turn calibration procedure and results log
