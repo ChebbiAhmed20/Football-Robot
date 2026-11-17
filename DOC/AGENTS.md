@@ -186,6 +186,14 @@ Newest entries first. **One entry per change**, written when you make the change
 
 ### Entries
 
+### 2026-11-17 03:17 (Africa/Tunis): Completed Phase 4 (Mock robot server & test suite)
+- **Where:** `tools/mock-robot/` (`src/mixing.ts`, `src/robot_model.ts`, `src/server.ts`, `tests/protocol.test.ts`).
+- **What:** Built Node.js + TypeScript mock robot server implementing protocol v4 (mixing against shared vectors, timed turns, single client enforcement, 800 ms failsafe, status every 500 ms, event queue deduplication, busy/cancelled errors).
+- **Why:** Provide full hardware-free testing environment for the web controller and automated protocol validation.
+- **Verified:** Ran `npm --prefix tools/mock-robot test` (Vitest). All 13 tests in 1 suite passed in 17ms.
+- **Docs updated:** `DOC/AGENTS.md`.
+- **Follow-ups:** Proceed to Phase 5: Web controller (Vite + TS) implementation and tests.
+
 ### 2026-11-17 03:15 (Africa/Tunis): Completed Phase 2 (core logic) & Phase 3 (protocol parse/encode)
 - **Where:** `firmware/src/core/` (`mixing.h/.cpp`, `turn.h/.cpp`, `event_queue.h/.cpp`, `state_filter.h/.cpp`, `failsafe.h/.cpp`), `firmware/src/protocol/` (`messages.h`, `parse.h/.cpp`, `encode.h/.cpp`), `firmware/test/` (`test_mixing`, `test_turn`, `test_event_queue`, `test_state_filter`, `test_parse`).
 - **What:** Implemented pure C++ core logic without Arduino dependencies (mixing with 70 min-PWM and PWM_CAP, timed turn state machine, 8-event priority queue with deduplication, state filter with sequence number ordering, 800 ms failsafe watchdog) and protocol v4 parser/encoder enforcing 128-byte limit and clamping. Created Unity test suites for all 5 modules.
