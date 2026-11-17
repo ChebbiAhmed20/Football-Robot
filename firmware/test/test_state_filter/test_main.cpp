@@ -78,3 +78,4 @@ int main(int argc, char **argv) {
     RUN_TEST(test_failsafe_watchdog);
     return UNITY_END();
 }
+

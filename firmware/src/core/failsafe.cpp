@@ -26,3 +26,4 @@ void FailsafeWatchdog::reset() {
 void FailsafeWatchdog::trip() {
     is_active_ = false;
 }
+

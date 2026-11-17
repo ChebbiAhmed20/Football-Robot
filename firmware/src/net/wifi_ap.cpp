@@ -11,3 +11,4 @@ bool WifiAccessPoint::init(const char* ssid, const char* password) {
     WiFi.softAPConfig(local_ip, gateway, subnet);
     return WiFi.softAP(ssid, password);
 }
+

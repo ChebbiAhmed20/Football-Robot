@@ -77,3 +77,4 @@ describe('PingManager & Connection Gauge States', () => {
     expect(disco.cssClass).toBe('gauge-disconnected');
   });
 });
+

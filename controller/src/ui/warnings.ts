@@ -25,3 +25,4 @@ export class WarningsUI {
     this.container.textContent = '';
   }
 }
+

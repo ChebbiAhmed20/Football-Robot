@@ -197,3 +197,4 @@ Once bench tests and turn calibration are complete:
 1. **Battery Sag Impact on Timed Turns:** As the 2S battery discharges from 8.4 V down to 7.4 V, wheel rotational speed decreases. Timed turns will gradually undershoot by approximately 5° to 12°. Always swap in freshly charged packs before competitive matches.
 2. **Floor Surface Friction:** Friction coefficient variances (e.g. dusty floors or foam mats vs polished wood) directly alter turn rates. Re-run quick calibration whenever venue flooring changes.
 3. **Open-Loop Differential Skew:** Slight mechanical tolerances between the two TT gearboxes can cause minor straight-line drifting at full throttle. Adjusting the joystick angle slightly compensates during manual driving.
+

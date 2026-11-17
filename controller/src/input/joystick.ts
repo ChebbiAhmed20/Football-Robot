@@ -117,3 +117,4 @@ export class JoystickController {
     this.onMove(calc.d, calc.m);
   }
 }
+

@@ -58,3 +58,4 @@ Record all field calibration runs in this table:
 - **Battery Sag:** As battery drops from 8.4 V to 7.4 V, turns will undershoot by 5°–15°. Keep spare packs charged.
 - **Tire Dust:** TT rubber tires collect dust and slip on slick floors. Wipe tires with isopropyl alcohol before matches.
 - **Surface Friction:** Moving from wooden floor to foam tiles will change turn resistance significantly. Re-calibrate whenever venue surface changes.
+

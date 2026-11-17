@@ -28,3 +28,4 @@ private:
     uint32_t last_feed_time_ms_{0};
     bool is_active_{false};
 };
+

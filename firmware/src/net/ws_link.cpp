@@ -98,3 +98,4 @@ bool WsLink::send_status(int32_t rssi, uint32_t ms) {
     encode_status(tx_buffer_, sizeof(tx_buffer_), rssi, ms);
     return send_text(tx_buffer_);
 }
+

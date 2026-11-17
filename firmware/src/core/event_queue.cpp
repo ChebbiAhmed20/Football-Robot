@@ -115,3 +115,4 @@ void EventQueue::clear_pending() {
     tail_ = 0;
     count_ = 0;
 }
+

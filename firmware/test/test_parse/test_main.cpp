@@ -108,3 +108,4 @@ int main(int argc, char **argv) {
     RUN_TEST(test_parse_out_of_range_handling);
     return UNITY_END();
 }
+

@@ -125,3 +125,4 @@ describe('SocketClient (Lifecycle, Sequencer Reset & Reconnect)', () => {
     expect(client.getSequencer().current()).toBe(0);
   });
 });
+

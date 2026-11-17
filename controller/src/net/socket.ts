@@ -194,3 +194,4 @@ export class SocketClient {
   public getSequencer(): Sequencer { return this.sequencer; }
   public isConnected(): boolean { return this.isHandshakeComplete; }
 }
+

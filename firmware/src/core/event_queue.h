@@ -64,3 +64,4 @@ private:
     size_t history_idx_{0};
     size_t history_count_{0};
 };
+

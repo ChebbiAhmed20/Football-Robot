@@ -35,3 +35,4 @@ void StatusLed::update(uint32_t current_time_ms) {
         digitalWrite(PIN_STATUS_LED, led_state_ ? HIGH : LOW);
     }
 }
+

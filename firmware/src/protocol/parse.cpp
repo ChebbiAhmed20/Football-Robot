@@ -132,3 +132,4 @@ bool parse_incoming_message(const char* json_str, size_t length, InMessage& out_
     out_msg.error = ParseError::BAD_MSG;
     return false;
 }
+

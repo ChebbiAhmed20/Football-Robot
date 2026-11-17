@@ -81,3 +81,4 @@ describe('StateSender (Heartbeat & Immediate Dispatch)', () => {
     expect(sent).toHaveLength(3);
   });
 });
+

@@ -193,3 +193,4 @@ Before each match, perform this rapid 2-minute pre-flight check:
 ## 11. Command Reference
 
 For the complete list of daily PlatformIO, npm, and git commands, see [DOC/AGENTS.md §2](file:///c:/Users/MSI/Desktop/FOOTBALLROBOT/DOC/AGENTS.md#L28-L77).
+

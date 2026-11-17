@@ -49,3 +49,4 @@ function gzipAll(dir) {
 
 gzipAll(firmwareDataDir);
 console.log('--- Build complete: controller written to firmware/data ---');
+

@@ -18,3 +18,4 @@ export interface RobotStatus {
   rssi: number;
   uptimeMs: number;
 }
+

@@ -78,3 +78,4 @@ describe('EventSender (150 ms Resend & Max 5 Tries)', () => {
     expect(warnings[0]).toContain('not acknowledged after 5 attempts');
   });
 });
+

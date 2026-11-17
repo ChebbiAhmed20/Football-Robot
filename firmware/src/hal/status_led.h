@@ -22,3 +22,4 @@ private:
     uint32_t last_toggle_ms_{0};
     bool led_state_{false};
 };
+

@@ -32,7 +32,7 @@ Run from the repo root unless stated. Commands marked (after P#) only exist once
 ### Firmware (`cd firmware`)
 
 | Goal | Command |
-|---|---|
+| --- | --- |
 | Build | `pio run` |
 | Flash firmware | `pio run -t upload` |
 | Build and flash the web page (LittleFS) | `pio run -t uploadfs` |
@@ -51,7 +51,7 @@ If upload hangs on "Connecting...": hold the BOOT button on the ESP32 until it s
 ### Controller (`cd controller`)
 
 | Goal | Command |
-|---|---|
+| --- | --- |
 | Install dependencies | `npm install` |
 | Dev server with hot reload | `npm run dev` |
 | Unit tests | `npm test` |
@@ -61,7 +61,7 @@ If upload hangs on "Connecting...": hold the BOOT button on the ESP32 until it s
 ### Mock robot (`cd tools/mock-robot`)
 
 | Goal | Command |
-|---|---|
+| --- | --- |
 | Install | `npm install` |
 | Start mock on `ws://localhost:8080/ws` | `npm start` |
 | Mock protocol tests | `npm test` |
@@ -69,7 +69,7 @@ If upload hangs on "Connecting...": hold the BOOT button on the ESP32 until it s
 ### Whole project (after P5)
 
 | Goal | Command |
-|---|---|
+| --- | --- |
 | Mock + controller dev together | `node scripts/dev.mjs` |
 | Build controller, then flash page to robot | `node scripts/build-controller.mjs && (cd firmware && pio run -t uploadfs)` |
 | Run every automated test | `(cd firmware && pio test -e native) && (cd controller && npm test) && (cd tools/mock-robot && npm test)` |
@@ -111,7 +111,7 @@ Full tree and reasons: `ARCHITECTURE.md` section 2.
 ## 4. Which doc to update for which change
 
 | If you change... | Update these |
-|---|---|
+| --- | --- |
 | A message, field, range, timing or behaviour | `PROTOCOL.md` (first!), its change log and version if breaking, firmware, mock, controller, tests, `shared/test-vectors.json` |
 | A pin, wiring, jumper or power part | `include/config.h`, `PROTOCOL.md` section 12, `docs/wiring.md`, `docs/power.md` |
 | `TURN_*` constants or calibration | `include/config.h`, `docs/calibration.md` (add the measurement), `PROTOCOL.md` section 6.4 if defaults change |
@@ -128,7 +128,7 @@ Full tree and reasons: `ARCHITECTURE.md` section 2.
 Fill these in after the first successful build, and update on every change.
 
 | Item | Version |
-|---|---|
+| --- | --- |
 | PlatformIO platform `espressif32` | `^6.5.0` (Arduino core 2.0.x / `espressif32`) |
 | Arduino core | `2.0.14` |
 | ArduinoJson | `^7.0.0` (pinned in platformio.ini) |
@@ -142,6 +142,7 @@ Fill these in after the first successful build, and update on every change.
 ## 6. Rules for the agent
 
 **Process**
+
 1. Read `PROTOCOL.md` and the newest entries of the Project log before changing anything.
 2. Protocol first: when behaviour changes, edit `PROTOCOL.md`, then firmware, mock and controller, then the tests. Never leave the three sides disagreeing.
 3. Work in small steps. After each step run the relevant tests (section 2) and fix failures before moving on.
@@ -189,6 +190,7 @@ Newest entries first. **One entry per change**, written when you make the change
 ### Entries
 
 ### 2026-11-17 03:27 (Africa/Tunis): Created TESTING.md, EXECUTION.md, pinned versions and synced trees
+
 - **Where:** `DOC/TESTING.md`, `DOC/EXECUTION.md`, `DOC/ARCHITECTURE.md`, `DOC/AGENTS.md`.
 - **What:** Authored comprehensive testing guide and execution user manual. Updated directory trees in ARCHITECTURE.md and AGENTS.md to explicitly reflect `DOC/` and new docs. Pinned runtime, tool, and library versions in section 5.
 - **Why:** Satisfies deliverables 9 & 10 and enforces the documentation-sync golden rule.
@@ -197,6 +199,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Final review and git commit.
 
 ### 2026-11-17 03:25 (Africa/Tunis): Completed Phase 6 (Hardware-facing firmware code)
+
 - **Where:** `firmware/src/` (`hal/motors.h/.cpp`, `hal/status_led.h/.cpp`, `net/wifi_ap.h/.cpp`, `net/web.h/.cpp`, `net/ws_link.h/.cpp`, `main.cpp`).
 - **What:** Implemented hardware abstraction layer (L298N LEDC 1 kHz 8-bit PWM with boot-safe LOW pins and PWM_CAP, non-blocking status LED blink/steady states), network layer (Soft-AP at 192.168.4.1, LittleFS static web server with automatic gzip delivery, AsyncWebSocket server with single-client rejection and thread-safe FreeRTOS rx queue), and main control loop in `main.cpp` executing every 10 ms.
 - **Why:** Delivers complete ESP32 robot firmware wiring core pure logic to real hardware pins and network transport per PROTOCOL.md and ARCHITECTURE.md.
@@ -205,6 +208,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Prepare TESTING.md and EXECUTION.md.
 
 ### 2026-11-17 03:23 (Africa/Tunis): Completed Phase 5 (Web controller) & End-to-End integration
+
 - **Where:** `controller/` (`src/protocol/types.ts`, `constants.ts`, `src/net/` `socket.ts`, `sequencer.ts`, `state_sender.ts`, `event_sender.ts`, `ping.ts`, `clock.ts`, `src/input/` `joystick.ts`, `spin_buttons.ts`, `buttons.ts`, `src/ui/` `gauge.ts`, `warnings.ts`, `layout.css`, `src/state/store.ts`, `src/main.ts`, `index.html`, `vite.config.ts`), `controller/tests/` (`joystick.test.ts`, `state_sender.test.ts`, `event_sender.test.ts`, `gauge.test.ts`, `socket.test.ts`), `tools/mock-robot/tests/e2e.test.ts`.
 - **What:** Built zero-framework mobile web controller adhering to protocol v4 and architecture specifications. Built and verified with Vite + gzip into `firmware/data`. Added complete Vitest test suites (17 tests) and end-to-end integration test against mock robot (2 tests).
 - **Why:** Delivers client-side controller interface and verifies end-to-end communication against mock robot without hardware.
@@ -213,6 +217,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Proceed to Phase 6 hardware-facing firmware code (`hal/`, `net/`, `main.cpp`).
 
 ### 2026-11-17 03:17 (Africa/Tunis): Completed Phase 4 (Mock robot server & test suite)
+
 - **Where:** `tools/mock-robot/` (`src/mixing.ts`, `src/robot_model.ts`, `src/server.ts`, `tests/protocol.test.ts`).
 - **What:** Built Node.js + TypeScript mock robot server implementing protocol v4 (mixing against shared vectors, timed turns, single client enforcement, 800 ms failsafe, status every 500 ms, event queue deduplication, busy/cancelled errors).
 - **Why:** Provide full hardware-free testing environment for the web controller and automated protocol validation.
@@ -221,6 +226,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Proceed to Phase 5: Web controller (Vite + TS) implementation and tests.
 
 ### 2026-11-17 03:15 (Africa/Tunis): Completed Phase 2 (core logic) & Phase 3 (protocol parse/encode)
+
 - **Where:** `firmware/src/core/` (`mixing.h/.cpp`, `turn.h/.cpp`, `event_queue.h/.cpp`, `state_filter.h/.cpp`, `failsafe.h/.cpp`), `firmware/src/protocol/` (`messages.h`, `parse.h/.cpp`, `encode.h/.cpp`), `firmware/test/` (`test_mixing`, `test_turn`, `test_event_queue`, `test_state_filter`, `test_parse`).
 - **What:** Implemented pure C++ core logic without Arduino dependencies (mixing with 70 min-PWM and PWM_CAP, timed turn state machine, 8-event priority queue with deduplication, state filter with sequence number ordering, 800 ms failsafe watchdog) and protocol v4 parser/encoder enforcing 128-byte limit and clamping. Created Unity test suites for all 5 modules.
 - **Why:** Required by ARCHITECTURE.md sections 2 & 3 and PROTOCOL.md v4 contract.
@@ -229,6 +235,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Proceed to Phase 4: Mock robot server and its protocol test suite.
 
 ### 2026-11-17 03:10 (Africa/Tunis): Completed Phase 1 skeleton and hardware documentation
+
 - **Where:** `shared/test-vectors.json`, `docs/` (`wiring.md`, `power.md`, `calibration.md`, `hardware-checklist.md`), `firmware/` (`platformio.ini`, `include/config.h`), `controller/` (`package.json`, `tsconfig.json`), `tools/mock-robot/` (`package.json`, `tsconfig.json`), `scripts/` (`build-controller.mjs`, `dev.mjs`), `README.md`, `.gitignore`, `.editorconfig`.
 - **What:** Created complete Phase 1 skeleton, test vectors for mixing and turn durations, hardware wiring/power/calibration/checklist documents, and installed npm dependencies in controller and mock-robot.
 - **Why:** Establish foundational repo structure according to ARCHITECTURE.md and PROTOCOL.md.
@@ -237,6 +244,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Proceed to Phase 2: Firmware `core/` pure logic and tests.
 
 ### 2026-11-17 03:02 (Africa/Tunis): Applied pre-decided protocol clarifications
+
 - **Where:** `DOC/PROTOCOL.md` (§1, §6.1, §9, §14), `AGENTS.md` (root pointer)
 - **What:** Removed `turn` field from robot `hello` table in §9; updated "PWA" to "web page" in §1; added note in §6.1 that names for d = 3, 5, 11, 13 are approximate; logged clarifications in §14 change log; created root `AGENTS.md` pointing to `DOC/AGENTS.md`.
 - **Why:** Protocol consistency as mandated by pre-decisions in project brief.
@@ -245,6 +253,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Proceed with repository skeleton and build phases.
 
 ### 2026-11-17 02:54 (Africa/Tunis): Added AGENTS.md
+
 - **Where:** `AGENTS.md` (new, repo root)
 - **What:** Created the working guide: repeated commands, doc-sync rule, agent rules, project log.
 - **Why:** Avoid retyping commands every session and make sure every change is documented with when, where and why, and that any agent follows the same rules.
@@ -253,6 +262,7 @@ Newest entries first. **One entry per change**, written when you make the change
 - **Follow-ups:** Pin versions in section 5 after the first successful build. Resolve the open protocol points in `ARCHITECTURE.md` section 9.
 
 ### 2026-11-17 02:42 (Africa/Tunis): Initial architecture
+
 - **Where:** `ARCHITECTURE.md` (new)
 - **What:** Defined the folder layout, firmware and controller design, install list, power and wiring plan, and the build order.
 - **Why:** Needed a single plan before writing code.

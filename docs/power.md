@@ -64,3 +64,4 @@ The L298N bipolar junction transistors incur an internal saturation voltage drop
 2. **Cell Balancing & Protection (BMS):** Use matched 18650 cells of the same capacity and discharge rating. It is strongly recommended to incorporate a 2S BMS protection circuit (over-charge, over-discharge, short-circuit protection).
 3. **Switch State During Charging:** Always set the main power switch to **OFF** when plugging in the USB-C charger to prevent back-powering motors and regulators while charging.
 4. **Never Charge Unattended:** Charge on a fire-resistant surface and monitor battery temperature. Disconnect immediately if cells become uncomfortably hot to the touch.
+

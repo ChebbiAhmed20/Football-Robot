@@ -69,3 +69,4 @@ export class ConnectionGaugeUI {
     this.detailLabel.textContent = data.detail;
   }
 }
+

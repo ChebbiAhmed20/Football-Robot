@@ -60,3 +60,4 @@ struct OutMessage {
     int32_t rssi{0};               // status
     uint32_t ms{0};                // status uptime
 };
+

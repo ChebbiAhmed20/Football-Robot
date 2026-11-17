@@ -21,3 +21,4 @@ size_t encode_pong(char* buffer, size_t max_len, int32_t n);
 
 // Encodes status message: {"t":"status","rssi":N,"ms":N}
 size_t encode_status(char* buffer, size_t max_len, int32_t rssi, uint32_t ms);
+

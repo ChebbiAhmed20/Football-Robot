@@ -36,3 +36,4 @@ size_t encode_status(char* buffer, size_t max_len, int32_t rssi, uint32_t ms) {
     int written = std::snprintf(buffer, max_len, "{\"t\":\"status\",\"rssi\":%d,\"ms\":%u}", rssi, ms);
     return (written > 0 && static_cast<size_t>(written) < max_len) ? static_cast<size_t>(written) : 0;
 }
+

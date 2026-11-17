@@ -23,3 +23,4 @@ private:
     static constexpr uint8_t LEDC_CHANNEL_LEFT = 0;
     static constexpr uint8_t LEDC_CHANNEL_RIGHT = 1;
 };
+

@@ -86,3 +86,4 @@ int main(int argc, char **argv) {
     RUN_TEST(test_stop_priority_clears_queue);
     return UNITY_END();
 }
+

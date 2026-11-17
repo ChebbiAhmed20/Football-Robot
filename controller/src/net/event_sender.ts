@@ -97,3 +97,4 @@ export class EventSender {
     return this.pending.size;
   }
 }
+

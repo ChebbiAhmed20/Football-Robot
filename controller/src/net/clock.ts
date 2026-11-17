@@ -13,3 +13,4 @@ export const defaultClock: Clock = {
   setInterval: (cb, ms) => setInterval(cb, ms),
   clearInterval: (id) => clearInterval(id),
 };
+

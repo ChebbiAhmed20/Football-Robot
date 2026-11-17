@@ -10,3 +10,4 @@ insert_final_newline = true
 
 [*.{c,cpp,h,hpp,ino}]
 indent_size = 4
+

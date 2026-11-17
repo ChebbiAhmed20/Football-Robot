@@ -193,3 +193,4 @@ describe('Mock Robot Protocol & State Machine', () => {
     expect(sentMessages).toContainEqual({ t: 'err', q: 0, c: 'bad_msg' });
   });
 });
+

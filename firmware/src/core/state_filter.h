@@ -42,3 +42,4 @@ private:
     StateCommand candidate_{};
     bool has_candidate_{false};
 };
+

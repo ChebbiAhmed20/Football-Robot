@@ -49,3 +49,4 @@ private:
     QueueHandle_t rx_queue_{nullptr};
     char tx_buffer_[MAX_MESSAGE_SIZE + 1]{0};
 };
+

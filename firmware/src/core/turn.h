@@ -49,3 +49,4 @@ private:
     uint32_t active_q_{0};
     MotorOutput current_output_{0, 0};
 };
+

@@ -21,3 +21,4 @@ MotorOutput mix_drive(int8_t d, float m, uint8_t s, uint8_t min_pwm = MIN_PWM, u
 // s: speed PWM (80 to 255)
 // pwm_cap: maximum allowable PWM (default PWM_CAP = 255)
 MotorOutput mix_spin(int8_t r, uint8_t s, uint8_t pwm_cap = PWM_CAP);
+

@@ -42,3 +42,4 @@ void StateFilter::reset() {
     candidate_ = StateCommand{};
     has_candidate_ = false;
 }
+

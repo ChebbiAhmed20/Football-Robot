@@ -100,3 +100,4 @@ int main(int argc, char **argv) {
     RUN_TEST(test_pwm_cap);
     return UNITY_END();
 }
+
