@@ -1,0 +1,38 @@
+{
+  "description": "FootBot test vectors for mixing and turn durations (PROTOCOL.md v4)",
+  "mixing": [
+    { "d": 0, "m": 1.0, "s": 200, "left": 200, "right": 200, "description": "forward" },
+    { "d": 1, "m": 1.0, "s": 200, "left": 200, "right": 108, "description": "forward, slight right" },
+    { "d": 2, "m": 1.0, "s": 200, "left": 200, "right": 0, "description": "forward-right" },
+    { "d": 3, "m": 1.0, "s": 200, "left": 200, "right": -108, "description": "forward, turning right" },
+    { "d": 4, "m": 1.0, "s": 200, "left": 200, "right": -200, "description": "spin right on spot" },
+    { "d": 5, "m": 1.0, "s": 200, "left": 108, "right": -200, "description": "back, turning right" },
+    { "d": 6, "m": 1.0, "s": 200, "left": 0, "right": -200, "description": "back-right" },
+    { "d": 7, "m": 1.0, "s": 200, "left": -108, "right": -200, "description": "back, slight right" },
+    { "d": 8, "m": 1.0, "s": 200, "left": -200, "right": -200, "description": "backward" },
+    { "d": 9, "m": 1.0, "s": 200, "left": -200, "right": -108, "description": "back, slight left" },
+    { "d": 10, "m": 1.0, "s": 200, "left": -200, "right": 0, "description": "back-left" },
+    { "d": 11, "m": 1.0, "s": 200, "left": -200, "right": 108, "description": "back, turning left" },
+    { "d": 12, "m": 1.0, "s": 200, "left": -200, "right": 200, "description": "spin left on spot" },
+    { "d": 13, "m": 1.0, "s": 200, "left": -108, "right": 200, "description": "forward, turning left" },
+    { "d": 14, "m": 1.0, "s": 200, "left": 0, "right": 200, "description": "forward-left" },
+    { "d": 15, "m": 1.0, "s": 200, "left": 108, "right": 200, "description": "forward, slight left" },
+    { "d": 0, "m": 0.5, "s": 200, "left": 100, "right": 100, "description": "half speed forward" },
+    { "d": 0, "m": 0.3, "s": 200, "left": 70, "right": 70, "description": "minimum PWM threshold (60 raised to 70)" },
+    { "d": 8, "m": 0.3, "s": 200, "left": -70, "right": -70, "description": "minimum PWM threshold negative (-60 to -70)" },
+    { "d": -1, "m": 1.0, "s": 200, "left": 0, "right": 0, "description": "idle direction d=-1" },
+    { "d": 0, "m": 0.0, "s": 200, "left": 0, "right": 0, "description": "zero throttle m=0" }
+  ],
+  "spin": [
+    { "r": 1, "s": 200, "left": 200, "right": -200, "description": "spin right" },
+    { "r": -1, "s": 200, "left": -200, "right": 200, "description": "spin left" },
+    { "r": 0, "s": 200, "left": 0, "right": 0, "description": "stop spinning" },
+    { "r": 1, "s": 80, "left": 80, "right": -80, "description": "spin min speed 80" }
+  ],
+  "turn_durations": [
+    { "a": 90, "turn_ms_per_deg_right": 4.5, "turn_ms_per_deg_left": 4.5, "expected_ms": 405, "description": "90 deg right" },
+    { "a": -90, "turn_ms_per_deg_right": 4.5, "turn_ms_per_deg_left": 4.5, "expected_ms": 405, "description": "90 deg left" },
+    { "a": 180, "turn_ms_per_deg_right": 4.5, "turn_ms_per_deg_left": 4.5, "expected_ms": 810, "description": "180 deg right" },
+    { "a": -180, "turn_ms_per_deg_right": 4.5, "turn_ms_per_deg_left": 4.5, "expected_ms": 810, "description": "180 deg left" }
+  ]
+}

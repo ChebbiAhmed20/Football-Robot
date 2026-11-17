@@ -186,6 +186,14 @@ Newest entries first. **One entry per change**, written when you make the change
 
 ### Entries
 
+### 2026-11-17 03:10 (Africa/Tunis): Completed Phase 1 skeleton and hardware documentation
+- **Where:** `shared/test-vectors.json`, `docs/` (`wiring.md`, `power.md`, `calibration.md`, `hardware-checklist.md`), `firmware/` (`platformio.ini`, `include/config.h`), `controller/` (`package.json`, `tsconfig.json`), `tools/mock-robot/` (`package.json`, `tsconfig.json`), `scripts/` (`build-controller.mjs`, `dev.mjs`), `README.md`, `.gitignore`, `.editorconfig`.
+- **What:** Created complete Phase 1 skeleton, test vectors for mixing and turn durations, hardware wiring/power/calibration/checklist documents, and installed npm dependencies in controller and mock-robot.
+- **Why:** Establish foundational repo structure according to ARCHITECTURE.md and PROTOCOL.md.
+- **Verified:** Dependencies installed cleanly (`npm install` in controller and tools/mock-robot exited 0). Test vectors verified with Node.js calculation.
+- **Docs updated:** `README.md`, `docs/wiring.md`, `docs/power.md`, `docs/calibration.md`, `docs/hardware-checklist.md`, `DOC/AGENTS.md`.
+- **Follow-ups:** Proceed to Phase 2: Firmware `core/` pure logic and tests.
+
 ### 2026-11-17 03:02 (Africa/Tunis): Applied pre-decided protocol clarifications
 - **Where:** `DOC/PROTOCOL.md` (§1, §6.1, §9, §14), `AGENTS.md` (root pointer)
 - **What:** Removed `turn` field from robot `hello` table in §9; updated "PWA" to "web page" in §1; added note in §6.1 that names for d = 3, 5, 11, 13 are approximate; logged clarifications in §14 change log; created root `AGENTS.md` pointing to `DOC/AGENTS.md`.
