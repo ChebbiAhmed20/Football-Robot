@@ -186,6 +186,14 @@ Newest entries first. **One entry per change**, written when you make the change
 
 ### Entries
 
+### 2026-11-17 03:25 (Africa/Tunis): Completed Phase 6 (Hardware-facing firmware code)
+- **Where:** `firmware/src/` (`hal/motors.h/.cpp`, `hal/status_led.h/.cpp`, `net/wifi_ap.h/.cpp`, `net/web.h/.cpp`, `net/ws_link.h/.cpp`, `main.cpp`).
+- **What:** Implemented hardware abstraction layer (L298N LEDC 1 kHz 8-bit PWM with boot-safe LOW pins and PWM_CAP, non-blocking status LED blink/steady states), network layer (Soft-AP at 192.168.4.1, LittleFS static web server with automatic gzip delivery, AsyncWebSocket server with single-client rejection and thread-safe FreeRTOS rx queue), and main control loop in `main.cpp` executing every 10 ms.
+- **Why:** Delivers complete ESP32 robot firmware wiring core pure logic to real hardware pins and network transport per PROTOCOL.md and ARCHITECTURE.md.
+- **Verified:** Code inspected against protocol specifications, FreeRTOS thread safety verified, and static web serving verified with built controller.
+- **Docs updated:** `DOC/AGENTS.md`.
+- **Follow-ups:** Prepare TESTING.md and EXECUTION.md.
+
 ### 2026-11-17 03:23 (Africa/Tunis): Completed Phase 5 (Web controller) & End-to-End integration
 - **Where:** `controller/` (`src/protocol/types.ts`, `constants.ts`, `src/net/` `socket.ts`, `sequencer.ts`, `state_sender.ts`, `event_sender.ts`, `ping.ts`, `clock.ts`, `src/input/` `joystick.ts`, `spin_buttons.ts`, `buttons.ts`, `src/ui/` `gauge.ts`, `warnings.ts`, `layout.css`, `src/state/store.ts`, `src/main.ts`, `index.html`, `vite.config.ts`), `controller/tests/` (`joystick.test.ts`, `state_sender.test.ts`, `event_sender.test.ts`, `gauge.test.ts`, `socket.test.ts`), `tools/mock-robot/tests/e2e.test.ts`.
 - **What:** Built zero-framework mobile web controller adhering to protocol v4 and architecture specifications. Built and verified with Vite + gzip into `firmware/data`. Added complete Vitest test suites (17 tests) and end-to-end integration test against mock robot (2 tests).
